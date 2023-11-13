@@ -18,7 +18,7 @@ header += `<div class="header">
             <a href="index.html" class="logo">
                 Yang Tang Jun
             </a>
-            <a href="https://beian.miit.gov.cn/" target="_blank" class="link">湘ICP备2022022153号-2</a>
+            <a href="https://beian.miit.gov.cn/" target="_blank" class="link"></a>
         </div>
         
         <div class="right">
