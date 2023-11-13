@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="your keywords">
+    <meta name="description" content="your description">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/font/iconfont.css">
+
+    <!---->
+    <link rel="stylesheet" href="static/other/highlight/default.css">
+    <!---->
+</head>
+<body>
+<header id="5"></header>
+<div class="main">
+    <section class="section" id="anchor">
+        <div class="title">百度地图api</div>
+        <h5>HTML 代码:</h5>
+        <div class="text">
+            <p>链接百度地图api地址</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js_00">
+<code class="hljs html">&lt;script src="//api.map.baidu.com/api?v=3.0&ak=scOHX7o0tOFMe3ZX6QhGnShpkrOKi35L&services=&t=scOHX7o0tOFMe3ZX6QhGnShpkrOKi35L">&lt;/script&gt;
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_00">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+
+        <div class="text">
+            <p><a target="_blank" href="http://api.map.baidu.com/lbsapi/getpoint/">拾取坐标</a></p>
+        </div>
+        <h5>HTML 代码:</h5>
+        <div class="exhibit">
+            <pre class="code js_001">
+<code class="hljs html">&lt;div id="container"&gt;&lt;/div&gt;
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_001">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <h5>JS 代码:</h5>
+        <div class="text">
+            <p><a target="_blank" href="https://lbsyun.baidu.com/">自定义地图</a></p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js_1"><code class="hljs js">var map = new BMap.Map("container");
+var point = new BMap.Point(119.877986, 40.026843);
+map.centerAndZoom(point, 19);
+map.setMapStyleV2({
+    // 自定义地图id
+    styleId: '86fa69b2662e96d275711bc5c591283b'
+});
+// 开启鼠标滚轮
+map.enableScrollWheelZoom(true);
+
+// 创建点覆盖物
+var myIcon = new BMap.Icon("static/images/zuobiao.png", new BMap.Size(87, 93));
+var marker1 = new BMap.Marker(new BMap.Point(119.878986, 40.026843));
+marker1.setIcon(myIcon);
+marker1.setAnimation(BMAP_ANIMATION_BOUNCE);
+map.addOverlay(marker1);
+
+// 自定义文本标注
+var opts = {
+    // 指定文本标注所在的地理位置
+    position: point,
+    // 设置文本偏移量
+    offset: new BMap.Size(30, -30)
+}
+var label = new BMap.Label(
+        "&lt;div class=\"text\"&gt;" +
+            "&lt;p&gt;我是自定义字段&lt;/p&gt;" +
+        "&lt;/div&gt;"
+        // 或者
+        $('template').html()
+    , opts);
+// 创建文本标注对象
+map.addOverlay(label);
+
+// 坐标变换
+var this_point = $(this).data('point').split(','); // 获取当前点坐标
+var point = new BMap.Point(parseFloat(this_point[0]),parseFloat(this_point[1]));
+map.setCenter(point);
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section2" id="anchor2">
+        <div class="title">谷歌地图api</div>
+        <h5>HTML 代码:</h5>
+        <div class="text">
+            <p>链接谷歌地图api地址 language为语言，en为英文，ja为日文</p>
+        </div>
+        <pre class="code">
+<code class="hljs html">&lt;script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvgQYsiA_awHJ0btpBpypYN_CTuDV3Qr0&sensor=false,&language=en">&lt;/script&gt;
+</code></pre>
+        <div class="text">
+            <p>
+                <a target="_blank" href="https://www.google.com.hk/maps/@22.3194357,114.19715,15z?hl=zh-CN">如果想要拾取坐标</a>
+            </p>
+        </div>
+        <h5>HTML 代码:</h5>
+        <pre class="code">
+<code class="hljs html">&lt;div id="googleMap"&gt;&lt;/div&gt;
+</code></pre>
+        <h5>JS 代码:</h5>
+        <div class="text">
+            <p><a target="_blank" href="https://www.runoob.com/googleapi/google-maps-events.html">api文档</a></p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js_2"><code class="hljs js">var coordinate=new google.maps.LatLng(34.756307129471125, 135.50143301160293);
+function initialize() {
+    var mapProp = {
+        center:coordinate,
+        zoom:7,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    var marker=new google.maps.Marker({
+        position:coordinate,
+    });
+    marker.setMap(map);
+    var infowindow = new google.maps.InfoWindow({
+        content: "Hello"
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map,marker);
+    });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_2">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+<script src="static/js/main.js"></script>
+<script src="static/js/data.js"></script>
+<!---->
+<script src="static/other/highlight/highlight.js"></script>
+<script src="static/other/highlight/highlight.min.js"></script>
+<script src="static/other/copy/copy.js"></script>
+<script src="static/other/copy/particle.js"></script>
+<!---->
+<script src="static/js/function.js"></script>
+</html>

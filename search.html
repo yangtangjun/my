@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="your keywords">
+    <meta name="description" content="your description">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/font/iconfont.css">
+
+    <!---->
+    <link rel="stylesheet" href="static/other/highlight/default.css">
+    <link rel="stylesheet" href="static/other/animate/animate.css">
+    <!---->
+</head>
+<body>
+<header></header>
+<div class="main">
+    <section>
+        <input type="text" placeholder="搜索" class="main_search">
+    </section>
+    <section class="section">
+        <div class="lose">找不到结果</div>
+        <div class="search_item">
+            <div class="title">swiper</div>
+            <div class="text">
+                <p>当前Swiper的版本为 Swiper 7.0.8</p>
+            </div>
+            <div class="display">
+                <a href="static/other/swiper/swiper-bundle.css" target="_blank">swiper-bundle.min.css</a>
+                <a href="static/other/swiper/swiper-bundle.js" target="_blank">swiper-bundle.min.js</a>
+            </div>
+        </div>
+        <div class="search_item">
+            <div class="title">smooth</div>
+            <div class="text">
+                <p><a target="_blank" href="https://github.com/idiotWu/smooth-scrollbar">在Github上查看</a></p>
+            </div>
+            <div class="display">
+                <a href="static/other/scrollbar/smooth-scrollbar.js" target="_blank">smooth-scrollbar.js</a>
+            </div>
+        </div>
+        <div class="search_item">
+            <div class="title">locomotive</div>
+            <div class="text">
+                <p><a target="_blank" href="https://github.com/locomotivemtl/locomotive-scroll">在Github上查看</a></p>
+            </div>
+            <div class="display">
+                <a href="static/other/locomotive/locomotive-scroll.css" target="_blank">locomotive-scroll.css</a>
+                <a href="static/other/locomotive/locomotive-scroll.js" target="_blank">locomotive-scroll.js</a>
+            </div>
+        </div>
+        <div class="search_item">
+            <div class="title">cursor</div>
+            <div class="display">
+                <a href="static/other/cursor/cursor.js" target="_blank">cursor.js</a>
+            </div>
+        </div>
+        <div class="search_item">
+            <div class="title">hover-button</div>
+            <div class="display">
+                <a href="static/other/hover-button/hover-button.js" target="_blank">hover-button.js</a>
+            </div>
+        </div>
+        <div class="search_item">
+            <div class="title">aos</div>
+            <div class="display">
+                <a href="static/other/aos/aos.css" target="_blank">aos.css</a>
+                <a href="static/other/aos/aos.js" target="_blank">aos.js</a>
+            </div>
+        </div>
+        <div class="search_item">
+            <div class="title">fullPage</div>
+            <div class="display">
+                <a href="static/other/fullpage/fullpage.js" target="_blank">fullPage.js</a>
+            </div>
+        </div>
+        <div class="search_item">
+            <div class="title">animate</div>
+            <div class="display">
+                <a href="static/other/animate/animate.css" target="_blank">animate.css</a>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+<script src="static/js/main.js"></script>
+<script src="static/js/data.js"></script>
+<!---->
+<script src="static/other/highlight/highlight.js"></script>
+<script src="static/other/highlight/highlight.min.js"></script>
+<script src="static/other/copy/copy.js"></script>
+<script src="static/other/copy/particle.js"></script>
+<!---->
+<script src="static/js/function.js"></script>
+<script>
+    $('.main_search').focus();
+    function stair() {
+        var searchText = $('.main_search').val();
+        var found = false;
+
+        $('.search_item').each(function() {
+            var itemText = $(this).text();
+            if (itemText.includes(searchText)) {
+                $('.lose').css('display','none')
+                $(this).css('display', 'block');
+                found = true;
+            } else {
+                $(this).css('display', 'none');
+            }
+        });
+
+
+        if (!found) {
+            $('.search_item').css('display','none')
+            $('.lose').css('display','block')
+        }
+    }
+
+    $('.main_search').keydown(function(e) {
+        var key = e.which;
+        if (key === 13) {
+            if ($(this).val() !== '') {
+                stair();
+            }else {
+                alert_text({
+                    text:'搜索不能为空',
+                    class: 'error',
+                })
+                $('.search_item').css('display','none')
+                $('.lose').css('display','none')
+            }
+        }
+    });
+</script>
+</html>

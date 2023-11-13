@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="your keywords">
+    <meta name="description" content="your description">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/font/iconfont.css">
+
+    <!---->
+    <link rel="stylesheet" href="static/other/highlight/default.css">
+    <!---->
+</head>
+<body>
+<header id="1"></header>
+<div class="main">
+    <section id="anchor">
+        <div class="title">jquery 网络地址</div>
+        <h5>HTML 代码:</h5>
+        <div class="text">
+            <p>jquery CND</p>
+        </div>
+        <div class="exhibit">
+             <pre class="code js_01">
+<code class="hljs html">&lt;script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js">&lt;/script&gt;
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_01">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+
+    </section>
+    <section id="anchor2">
+        <div class="title">预加载img</div>
+        <h5>JS 代码:</h5>
+        <div class="text">
+            <p>加载页面所有的img标签的图片</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js_1">
+<code class="hljs js">setTimeout(()=>{
+    var load=0
+    var arr=new Array();
+    $('img').each(function (index,ele){
+        if($(this).attr('src')!==''){
+            arr.push($(this).attr('src'))
+        }
+    })
+    var len=arr.length
+    for(var i in arr){
+        var bimg=new Image();
+        bimg.src = arr[i];
+        bimg.onload = function () {
+            load+=1;
+            $('div').css({
+                width:load/len*100+'%',
+            })
+            if(len===load){
+                console.log(111)
+            }
+        }
+    }
+},10)
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+
+        <div class="text">
+            <p>或者</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js_f">
+<code class="hljs js">setTimeout(() => {
+    let imgList = document.querySelectorAll('img');
+    let imgSrcList = [];
+
+    for (let i = 0; i < imgList.length; i++) {
+        var imgSrc = imgList[i].getAttribute('src');
+        if (imgSrc) {
+            imgSrcList.push(imgSrc);
+        }
+    }
+
+    let len = imgSrcList.length;
+    let loadedCount = 0;
+    let progress = 0;
+
+    function updateProgress (){
+        document.querySelector('.load .num').innerHTML = `${progress}%`;
+    }
+
+    function incrementProgress ()  {
+        if (progress < loadedCount / len * 100) {
+            progress++;
+            updateProgress();
+        }
+    }
+
+    for (let i = 0; i < len; i++) {
+        const bimg = new Image();
+        bimg.src = imgSrcList[i];
+        bimg.onload = function() {
+            loadedCount++;
+            if (loadedCount === len) {
+                console.log('图片加载完毕')
+            }
+        };
+    }
+
+    setInterval(incrementProgress, 10);
+}, 10);
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_f">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+    <section id="anchor3">
+        <div class="title">鼠标移入,移出事件</div>
+        <h5>JS 代码:</h5>
+        <div class="text">
+            <p>鼠标指上元素</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code">
+<code class="hljs js">$("div").mouseenter(function(){});
+</code></pre>
+        </div>
+        <div class="text">
+            <p>鼠标离开元素</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code">
+<code class="hljs js">$("div").mouseleave(function(){});
+</code></pre>
+        </div>
+    </section>
+    <section id="anchor4">
+        <div class="title">slideToggle,slideUp</div>
+        <h5>JS 代码:</h5>
+        <div class="text">
+            <p>将段落滑上或滑下</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code">
+<code class="hljs js">$("div").slideToggle("slow");
+</code></pre>
+        </div>
+        <div class="text">
+            <p>将段落滑上</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code">
+<code class="hljs js">$("div").slideUp("slow");
+</code></pre>
+        </div>
+    </section>
+    <section id="anchor6">
+        <div class="title">input,键盘事件</div>
+        <h5>JS 代码:</h5>
+        <div class="text">
+            <p>input获得焦点</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js__3">
+<code class="hljs js">$("input").focus(function(){});
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js__3">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p>input失去焦点</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js__4">
+<code class="hljs js">$("input").blur(function(){});
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js__4">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+
+        <div class="text">
+            <p>按下键盘Enter（回车键）做出改变</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js_3">
+<code class="hljs js">$('input').keydown(function(e) {
+    var key = e.which;
+    if (key == 13) {
+        console.log(key)
+        console.log('你按了回车键！')
+        window.location.href = "./index.html";
+    }
+})
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_3">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+    <section id="anchor7">
+        <div class="title">网页可视区域,鼠标滚轮事件</div>
+        <h5>JS 代码:</h5>
+        <div class="exhibit">
+            <pre class="code">
+<code class="hljs js">document.body.clientWidth  // 网页可见区域宽度
+document.body.clientHeight  // 网页可见区域高度
+</code></pre>
+        </div>
+        <div class="text">
+            <p>监听鼠标滚轮事件</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js_4">
+<code class="hljs js">if (window.addEventListener)
+    window.addEventListener('DOMMouseScroll', wheel, false);
+window.onmousewheel = document.onmousewheel = wheel;
+function wheel(event){
+    var delta = 0;
+    if (!event) event = window.event;
+    if (event.wheelDelta) {
+        delta = event.wheelDelta/120;
+        if (window.opera) delta = -delta;
+    } else if (event.detail) {
+        delta = -event.detail/3;
+    }
+    if (delta)
+        handle(delta);
+}
+function handle(delta) {
+if (delta <0){
+        //向下滚动
+        console.log('下！')
+    }else{
+        //向上滚动
+        console.log('上！')
+    }
+}
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_4">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+    <section id="anchor8">
+        <div class="title">本地存储</div>
+        <div class="text">
+            <p>localstorage: 生命周期：持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。 sessionStorage: 关闭页面即被销毁</p>
+        </div>
+        <h5>JS 代码:</h5>
+        <div class="text">
+            <p>设置</p>
+        </div>
+        <pre class="code">
+<code class="hljs js">localStorage.setItem('load','加载');
+</code></pre>
+        <div class="text">
+            <p>获取</p>
+        </div>
+        <pre class="code">
+<code class="hljs js">localStorage.getItem('load')
+</code></pre>
+        <div class="text">
+            <p>清除</p>
+        </div>
+        <pre class="code">
+<code class="hljs js">localStorage.clear()
+</code></pre>
+        <div class="text">
+            <p>JavaScript 值转换为 JSON 字符串</p>
+        </div>
+        <pre class="code">
+<code class="hljs js">JSON.stringify()
+</code></pre>
+        <div class="text">
+            <p>JSON 字符串转换为对象。</p>
+        </div>
+        <pre class="code">
+<code class="hljs js">JSON.parse()
+</code></pre>
+    </section>
+    <section id="anchor9">
+        <div class="title">prepend</div>
+        <h5>HTML 代码:</h5>
+        <div class="exhibit">
+            <pre class="code">
+<code class="hljs html">&lt;div&gt;&lt;/div&gt;
+&lt;p&gt; helloStinkyTreasure &lt;/p&gt;
+</code></pre>
+        </div>
+        <h5>JS 代码:</h5>
+        <div class="exhibit">
+            <pre class="code">
+<code class="hljs js">$('div').prepend($('p'));
+</code></pre>
+        </div>
+        <h5>结果:</h5>
+        <div class="exhibit">
+            <pre class="code">
+<code class="hljs html">&lt;div&gt;
+    &lt;p&gt; helloStinkyTreasure &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+        </div>
+    </section>
+    <section id="anchor10">
+        <div class="wrap">
+            <div class="title">video,animationend</div>
+            <div class="text">
+                <p>视频的播放与暂停,animation动画监听</p>
+            </div>
+            <h5>JS 代码:</h5>
+            <div class="exhibit">
+                <pre class="code js_6"><code class="hljs js">$('video').trigger('play');  // 播放
+$('video').trigger('pause');  // 暂停
+$('video').on('ended',function () {
+    // 视频播放完毕！
+    console.log('视频播放完毕！')
+})
+
+// 给svg对象添加animationend事件
+$('svg').each(function(){
+    this.addEventListener('animationend',function(){
+       // 动画执行完毕！
+       console.log('动画执行完毕！')
+    })
+},true)
+</code></pre>
+                <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_6">
+                    <div class="iconfont icon-fuzhi"></div>
+                    <div class="iconfont icon-duigou position"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="anchor11">
+        <div class="wrap">
+            <div class="title">离线监听</div>
+            <h5>JS 代码:</h5>
+            <div class="exhibit">
+                <pre class="code js_7"><code class="hljs js">window.addEventListener("visibilitychange",function(){
+    if(document.hidden){
+        // 离开了当前窗口
+    }else{
+        // 回来了当前窗口
+    }
+});
+</code></pre>
+                <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_7">
+                    <div class="iconfont icon-fuzhi"></div>
+                    <div class="iconfont icon-duigou position"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+<script src="static/js/main.js"></script>
+<script src="static/js/data.js"></script>
+<!---->
+<script src="static/other/highlight/highlight.js"></script>
+<script src="static/other/highlight/highlight.min.js"></script>
+<script src="static/other/copy/copy.js"></script>
+<script src="static/other/copy/particle.js"></script>
+<!---->
+<script src="static/js/function.js"></script>
+</html>

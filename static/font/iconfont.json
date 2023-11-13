@@ -1,0 +1,37 @@
+{
+  "id": "4248455",
+  "name": "文档",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4611765",
+      "name": "对勾",
+      "font_class": "duigou",
+      "unicode": "ebe6",
+      "unicode_decimal": 60390
+    },
+    {
+      "icon_id": "9713056",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "10962407",
+      "name": "复制",
+      "font_class": "fuzhi",
+      "unicode": "e72c",
+      "unicode_decimal": 59180
+    },
+    {
+      "icon_id": "12754142",
+      "name": "右箭头",
+      "font_class": "youjiantou_huaban",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    }
+  ]
+}

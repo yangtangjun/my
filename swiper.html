@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="your keywords">
+    <meta name="description" content="your description">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/font/iconfont.css">
+
+    <!---->
+    <link rel="stylesheet" href="static/other/highlight/default.css">
+    <!---->
+</head>
+<body>
+<header id="2"></header>
+<div class="main">
+    <section class="section" id="anchor">
+        <div class="title">Swiper初始化</div>
+        <div class="text">
+            <p>当前Swiper的版本为 Swiper 7.0.8</p>
+        </div>
+        <pre class="code">
+<code class="hljs html">&lt;link rel="stylesheet" href="swiper-bundle.min.css"&gt;
+</code></pre>
+        <p>&nbsp;</p>
+        <pre class="code">
+<code class="hljs html">&lt;script src="swiper-bundle.min.js">&lt;/script&gt;
+</code></pre>
+        <div class="button">
+            <a target="_blank" href="static/other/swiper/swiper-bundle.css">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>查看css文件</p>
+            </a>
+            <a target="_blank" href="static/other/swiper/swiper-bundle.js">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>查看js文件</p>
+            </a>
+        </div>
+        <div class="text">
+            <p>构建html结构</p>
+        </div>
+        <h5>HTML 代码:</h5>
+        <div class="exhibit">
+            <pre class="code html_1"><code class="hljs html">&lt;div class="swiper"&gt;
+    &lt;div class="swiper-wrapper"&gt;
+        &lt;div class="swiper-slide"&gt;&lt;/div&gt;
+        &lt;div class="swiper-slide"&gt;&lt;/div&gt;
+        &lt;div class="swiper-slide"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 分页器 --&gt;
+    &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+    &lt;!-- 左右切换按钮 --&gt;
+    &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
+    &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".html_1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p>初始化Swiper</p>
+        </div>
+        <h5>JS 代码:</h5>
+        <div class="exhibit">
+            <pre class="code js_1">
+<code class="hljs js">var mySwiper = new Swiper ('.swiper', {
+    direction: 'vertical',  // 垂直切换选项,垂直需要一个高度
+    speed: 1000,
+    slidesPerView: 3,
+    spaceBetween: 20,
+    initialSlide: 1,
+    centeredSlides: true,
+    slideToClickedSlide: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+})
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p>禁止左右滑动</p>
+        </div>
+        <h5>HTML 代码:</h5>
+        <pre class="code">
+<code class="hljs html">&lt;div class="swiper swiper-no-swiping">&lt;/div&gt;
+</code></pre>
+        <h5>JS 代码:</h5>
+        <div class="exhibit">
+                   <pre class="code js_nb">
+<code class="hljs js">allowTouchMove: false,
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_nb">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+
+        <div class="text">
+            <p>设置loop的个数为五个</p>
+        </div>
+        <div class="exhibit">
+                   <pre class="code js_nb1">
+<code class="hljs js">loopedSlides: 5,
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_nb1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p>给Swiper绑定鼠标事件</p>
+        </div>
+        <div class="exhibit">
+                   <pre class="code js_nb2">
+<code class="hljs js">mousewheel: {
+    eventsTarget: 'body',
+},
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_nb2">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p>Swiper嵌套,给子swiper添加nested:true;</p>
+        </div>
+        <pre class="code">
+<code class="hljs js">nested: true,
+</code></pre>
+    </section>
+    <section class="section2" id="anchor2">
+        <div class="title">自动播放</div>
+        <h5>JS 代码:</h5>
+        <div class="exhibit">
+            <pre class="code js_10">
+<code class="hljs js">autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+},</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_10">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section3" id="anchor3">
+        <div class="title">分页器</div>
+        <h5>JS 代码:</h5>
+        <div class="text">
+            <p>自定义分页器</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js_2">
+<code class="hljs js">pagination: {
+    el: '.swiper-pagination',
+    clickable:true,
+    type: 'fraction',
+    renderFraction: function (currentClass, totalClass) {
+        return '&lt;span class="' + currentClass + '"&gt;&lt;/span&gt;' +
+                   '&lt;div class="line"&gt;&lt;/div&gt;' +
+               '&lt;span class="' + totalClass + '"&gt;&lt;/span&gt;';
+    },
+    formatFractionCurrent:function (number) {
+        return number<10?'0'+number:number;
+    },
+    formatFractionTotal: function (number) {
+        return number<10?'0'+number:number;
+    }
+},
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_2">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p>分页器不动，在基础上做出改变</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js_3">
+<code class="hljs js">pagination: {
+    el: '.swiper-pagination',
+    renderBullet: function (index, className) {
+        return '&lt;span class="' + className + '">' + '0' + (index + 1) + '&lt;/span>';
+    },
+},
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_3">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section4" id="anchor4">
+        <div class="title">走马灯</div>
+        <h5>HTML 代码:</h5>
+        <div class="text">
+            <p>swiper无缝滚动，走马灯</p>
+        </div>
+        <h5>CSS 代码:</h5>
+        <pre class="code">
+<code class="hljs css">.swiper-wrapper {
+    transition-timing-function: linear!important;
+}
+</code></pre>
+        <h5>JS 代码:</h5>
+        <div class="exhibit">
+            <pre class="code js_4">
+<code class="hljs js">var mySwiper = new Swiper ('.swiper', {
+    loop: true,
+    slidesPerView : 3,
+    spaceBetween: 40,
+    speed: 6000,//匀速时间
+    allowTouchMove: false,
+    autoplay: {
+        delay: 0,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+    },
+});
+// 鼠标移入暂停轮播 , 移出继续轮播
+var lastNeedSwiperSpeed;
+$('.notable').on('mouseenter', function(){
+    lastNeedSwiperSpeed = Math.abs(Math.abs(mySwiper.getTranslate()) - Math.abs(mySwiper.translate)) / (mySwiper.slideWidth + mySwiper.params.spaceBetween) * mySwiper.params.speed;
+    mySwiper.setTranslate(mySwiper.getTranslate());
+    mySwiper.autoplay.stop();
+})
+$('.notable').on('mouseleave', function(){
+    mySwiper.slideTo(mySwiper.activeIndex, lastNeedSwiperSpeed);
+    mySwiper.autoplay.start();
+})
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_4">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section5" id="anchor5">
+        <div class="title">响应式</div>
+        <h5>JS 代码:</h5>
+        <div class="exhibit">
+            <pre class="code js_5">
+<code class="hljs js">breakpoints: {
+    1366: {  //当屏幕宽度大于等于1366
+        slidesPerView: 2,
+        spaceBetween: 10
+    },
+}
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_5">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section6" id="anchor6">
+        <div class="title">双向绑定</div>
+        <h5>JS 代码:</h5>
+        <pre class="code">
+<code class="hljs js">var mySwiper = new Swiper ('.swiper', {})
+var mySwiper2 = new Swiper ('.swiper2', {})
+mySwiper.controller.control = mySwiper2;
+mySwiper2.controller.control = mySwiper;
+</code></pre>
+        <div class="text">
+            <p>控制多个Swiper</p>
+        </div>
+        <pre class="code">
+<code class="hljs js">var mySwiper3 = new Swiper ('.mySwiper3', {})
+mySwiper3.controller.control = [mySwiper, mySwiper2]</code></pre>
+    </section>
+    <section class="section7" id="anchor7">
+        <div class="title">Swiper切换效果</div>
+        <h5>HTMl 代码:</h5>
+        <div class="text">
+            <p>另类的切换效果</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code html_3">
+<code class="hljs html">&lt;div class="swiper"&gt;
+    &lt;div class="swiper-wrapper"&gt;
+        &lt;div class="swiper-slide"&gt;
+            &lt;div class="slide-inner"&gt;
+                &lt;img src="1.jpg" alt=""&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="swiper-slide"&gt;
+            &lt;div class="slide-inner"&gt;
+                &lt;img src="1.jpg" alt=""&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".html_3">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <h5>CSS 代码:</h5>
+        <pre class="code">
+<code class="hljs css">.swiper .swiper-slide {
+   overflow: hidden;
+}
+</code></pre>
+        <h5>JS 代码:</h5>
+        <div class="exhibit">
+            <pre class="code js_6">
+<code class="hljs js">var interleaveOffset = 0.5; //视差比值
+var mySwiper = new Swiper ('.swiper', {
+    speed: 1000,
+    grabCursor: true,
+    watchSlidesProgress: true,
+    mousewheelControl: true,
+    keyboardControl: true,
+    loop: true,
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+    },
+    on: {
+        progress: function(swiper) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                var slideProgress = swiper.slides[i].progress;
+                var innerOffset = swiper.width * interleaveOffset;
+                var innerTranslate = slideProgress * innerOffset;
+                swiper.slides[i].querySelector(".slide-inner").style.transform = "translate3d(" + innerTranslate + "px, 0, 0)";
+            }
+        },
+        touchStart: function(swiper) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                swiper.slides[i].style.transition = "";
+            }
+        },
+        setTransition: function(swiper, speed) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                swiper.slides[i].style.transition = speed + "ms";
+                swiper.slides[i].querySelector(".slide-inner").style.transition = speed + "ms";
+            }
+        }
+    }
+})
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_6">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+<script src="static/js/main.js"></script>
+<script src="static/js/data.js"></script>
+<!---->
+<script src="static/other/highlight/highlight.js"></script>
+<script src="static/other/highlight/highlight.min.js"></script>
+<script src="static/other/copy/copy.js"></script>
+<script src="static/other/copy/particle.js"></script>
+<!---->
+<script src="static/js/function.js"></script>
+</html>

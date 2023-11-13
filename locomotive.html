@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="your keywords">
+    <meta name="description" content="your description">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/font/iconfont.css">
+
+    <!---->
+    <link rel="stylesheet" href="static/other/highlight/default.css">
+    <!---->
+</head>
+<body>
+<header id="4"></header>
+<div class="main">
+    <section class="section" id="anchor">
+        <div class="title">初始化</div>
+        <h5>HTML 代码:</h5>
+        <p>&nbsp;</p>
+        <pre class="code">
+<code class="hljs html">&lt;link rel="stylesheet" href="locomotive-scroll.css"&gt;
+</code></pre>
+        <p>&nbsp;</p>
+        <pre class="code">
+<code class="hljs html">&lt;script src="locomotive-scroll.js">&lt;/script&gt;
+</code></pre>
+        <div class="button">
+            <a target="_blank" href="static/other/locomotive/locomotive-scroll.css">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>查看css文件</p>
+            </a>
+            <a target="_blank" href="static/other/locomotive/locomotive-scroll.js">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>查看js文件</p>
+            </a>
+        </div>
+        <h5>HTML 代码:</h5>
+        <div class="exhibit">
+             <pre class="code html_1">
+<code class="hljs html">&lt;div class="js_scroll" data-scroll-container&gt;
+    &lt;div data-scroll-section style="width: 100vw;height: 100vh;background: red;">&lt;/div&gt;
+    &lt;div data-scroll-section style="width: 100vw;height: 100vh;background: black;">&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".html_1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+
+        <h5>JS 代码:</h5>
+        <div class="exhibit">
+            <pre class="code js_1"><code class="hljs js">const scroll = new LocomotiveScroll({
+    el: document.querySelector('.js_scroll'),
+    smooth: true,
+    direction: 'horizontal', // 水平滚动
+});
+// 监听LocomotiveScroll的scroll事件
+scroll.on('scroll', function (scroll) {
+    var scrollTop = scroll.scroll.y
+    console.log(scrollTop);
+});
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+<script src="static/js/main.js"></script>
+<script src="static/js/data.js"></script>
+<!---->
+<script src="static/other/highlight/highlight.js"></script>
+<script src="static/other/highlight/highlight.min.js"></script>
+<script src="static/other/copy/copy.js"></script>
+<script src="static/other/copy/particle.js"></script>
+<!---->
+<script src="static/js/function.js"></script>
+</html>

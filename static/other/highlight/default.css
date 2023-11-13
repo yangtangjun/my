@@ -1,0 +1,271 @@
+/*!
+  Theme: Default
+  Description: Original highlight.js style
+  Author: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+  Maintainer: @highlightjs/core-team
+  Website: https://highlightjs.org/
+  License: see project LICENSE
+  Touched: 2021
+*/
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1.5em;
+    border-radius: 3px;
+    background: #282c34;
+    color: #abb2bf;
+}
+
+code.hljs {
+    padding: 3px 5px
+}
+
+.hljs {
+    background: #f3f3f3;
+    color: #444
+}
+
+.hljs-comment {
+    color: #697070
+}
+
+.hljs-punctuation, .hljs-tag {
+    color: #444a
+}
+
+.hljs-tag .hljs-attr, .hljs-tag .hljs-name {
+    color: #abb2bf;
+}
+.hljs-tag .hljs-attr{
+    color: #abb2bf;
+}
+
+.hljs-attribute, .hljs-doctag, .hljs-keyword, .hljs-meta .hljs-keyword, .hljs-name, .hljs-selector-tag {
+    font-weight: 500
+}
+
+.hljs-attribute{
+    color: #abb2bf;
+}
+
+.hljs-deletion, .hljs-number, .hljs-quote, .hljs-selector-class, .hljs-selector-id, .hljs-string, .hljs-template-tag, .hljs-type {
+    color: #9b703f;
+}
+
+.hljs-section, .hljs-title {
+    color: #e6c07b;
+    font-weight: 700
+}
+
+.hljs-link, .hljs-operator, .hljs-regexp, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-symbol, .hljs-template-variable, .hljs-variable {
+    color: #ab5656
+}
+
+.hljs-literal {
+    color: #695
+}
+
+.hljs-addition, .hljs-built_in, .hljs-bullet, .hljs-code {
+    color: #397300
+}
+
+.hljs-meta {
+    color: #cc7832;
+}
+
+.hljs-meta .hljs-string {
+    color: #38a
+}
+
+.hljs-emphasis {
+    font-style: italic
+}
+
+.hljs-strong {
+    font-weight: 700
+}
+/*
+
+XCode style (c) Angel Garcia <angelgarcia.mail@gmail.com>
+
+*/
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #fff;
+    color: #6e6e6e;
+    -webkit-text-size-adjust: none;
+}
+
+.hljs-comment,
+.hljs-javadoc {
+    color: #5c6370;
+    font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-literal,
+.nginx .hljs-title {
+    color: #c678dd;
+}
+.method,
+.hljs-list .hljs-title,
+.hljs-tag .hljs-title,
+.setting .hljs-value,
+.hljs-winutils,
+.tex .hljs-command,
+.http .hljs-title,
+.hljs-request,
+.hljs-status {
+    color: #008;
+}
+
+.hljs-envvar,
+.tex .hljs-special {
+    color: #660;
+}
+
+.hljs-string {
+    color: #98c379;
+}
+.hljs-tag .hljs-value,
+.hljs-cdata,
+.hljs-filter .hljs-argument,
+.hljs-attr_selector,
+.apache .hljs-cbracket,
+.hljs-date,
+.hljs-regexp {
+    color: #048704;
+}
+
+.hljs-sub .hljs-identifier,
+.hljs-pi,
+.hljs-tag,
+.hljs-tag .hljs-keyword,
+.hljs-decorator,
+.ini .hljs-title,
+.hljs-shebang,
+.hljs-prompt,
+.hljs-hexcolor,
+.hljs-rules .hljs-value,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.hljs-number,
+.css .hljs-function,
+.hljs-function .hljs-title,
+.coffeescript .hljs-attribute {
+    color: #abb2bf;
+}
+
+
+.hljs-number{
+    color: #d19a66;
+}
+
+.hljs-class .hljs-title,
+.smalltalk .hljs-class,
+.hljs-javadoctag,
+.hljs-yardoctag,
+.hljs-phpdoc,
+.hljs-dartdoc,
+.hljs-type,
+.hljs-typename,
+.hljs-tag .hljs-attribute,
+.hljs-doctype,
+.hljs-class .hljs-id,
+.hljs-built_in,
+.setting,
+.hljs-params,
+.clojure .hljs-attribute {
+    color: #61aeee;
+}
+
+.hljs-variable {
+    color: #bababa;
+}
+.css .hljs-tag,
+.hljs-rules .hljs-property,
+.hljs-pseudo,
+.hljs-subst {
+    color: #abb2bf;
+}
+
+.css .hljs-class,
+.css .hljs-id {
+    color: #9b703f;
+}
+
+.hljs-value .hljs-important {
+    color: #ff7700;
+    font-weight: bold;
+}
+
+.hljs-rules .hljs-keyword {
+    color: #c5af75;
+}
+
+.hljs-annotation,
+.apache .hljs-sqbracket,
+.nginx .hljs-built_in {
+    color: #9b859d;
+}
+
+.hljs-preprocessor,
+.hljs-preprocessor *,
+.hljs-pragma {
+    color: #643820;
+}
+
+.tex .hljs-formula {
+    background-color: #eee;
+    font-style: italic;
+}
+
+.diff .hljs-header,
+.hljs-chunk {
+    color: #808080;
+    font-weight: bold;
+}
+
+.diff .hljs-change {
+    background-color: #bccff9;
+}
+
+.hljs-addition {
+    background-color: #baeeba;
+}
+
+.hljs-deletion {
+    background-color: #ffc8bd;
+}
+
+.hljs-comment .hljs-yardoctag {
+    font-weight: bold;
+}
+
+.method .hljs-id {
+    color: #000;
+}
+
+
+.code {
+    /* border: 1px solid #ededed; */
+    padding: 1px;
+    border-radius: 3px;
+    line-height: 22px;
+    color: #000;
+    font-size: 13px;
+    background: rgba(255,255,255,0.1);
+}
+.code *{
+    font-family: consolas, microsoft yahei;
+}
+
+.js .hljs-string{
+    color: #98c379;
+}
+.js .hljs-title{
+    font-weight: 500;
+}

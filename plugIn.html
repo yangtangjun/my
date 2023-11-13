@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="your keywords">
+    <meta name="description" content="your description">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/font/iconfont.css">
+    <!---->
+    <link rel="stylesheet" href="static/other/highlight/default.css">
+
+    <!---->
+</head>
+<body>
+<header id="6"></header>
+<div class="main">
+    <section id="anchor">
+        <div class="title">fancybox</div>
+        <div class="exhibit">
+                <pre class="code">
+<code class="hljs html">&lt;link rel="stylesheet" href="fancybox.css"&gt;</code></pre>
+        </div>
+        <p>&nbsp;</p>
+        <pre class="code">
+<code class="hljs html">&lt;script src="fancybox.js">&lt;/script&gt;
+</code></pre>
+        <div class="button">
+            <a target="_blank" href="static/other/fancybox/fancybox.css">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>查看css文件</p>
+            </a>
+            <a target="_blank" href="static/other/fancybox/fancybox.js">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>查看js文件</p>
+            </a>
+        </div>
+        <h5>HTML 代码:</h5>
+        <p>&nbsp;</p>
+        <pre class="code">
+<code class="hljs html">&lt;a href="1.jpg" data-fancybox="honor-thumb" data-caption="Progress Award"&gt;
+    &lt;img src="1.jpg" alt=""&gt;
+&lt;/a&gt;</code></pre>
+    </section>
+    <section id="anchor2">
+        <div class="title">fullPage</div>
+        <pre class="code">
+<code class="hljs html">&lt;script src="fullpage.js">&lt;/script&gt;
+</code></pre>
+        <p>&nbsp;</p>
+        <pre class="code">
+<code class="hljs html">&lt;script src="smooth-scrollbar.js">&lt;/script&gt;
+</code></pre>
+        <div class="button">
+            <a target="_blank" href="static/other/fullpage/fullpage.js">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>查看fullpage.js文件</p>
+            </a>
+            <a target="_blank" href="static/other/scrollbar/smooth-scrollbar.js">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>查看smooth-scrollbar.js文件</p>
+            </a>
+        </div>
+        <h5>HTML 代码</h5>
+        <pre class="code">
+<code class="hljs html">&lt;div id="fullPage"&gt;
+    &lt;div class="section">&lt;/div&gt;
+    &lt;div class="section section2" id="my-scrollbar" data-scrollbar&gt;
+        &lt;div class="main">&lt;/div&gt;
+        &lt;div class="main2">&lt;/div&gt;
+        &lt;div class="main3">&lt;/div&gt;
+    &lt;/div>
+&lt;/div>
+</code></pre>
+        <h5>JS 代码</h5>
+        <div class="exhibit">
+            <pre class="code js_1"><code class="hljs js">var length = $('#fullPage .section').length;
+var anchor = [];
+for (let i = 1; i <= length; i++) {
+    anchor.push('page'+i)
+}
+$('#fullPage').fullpage({
+    scrollingSpeed: 1600,
+    anchors: anchor,
+    easingcss3: 'cubic-bezier(0.42,0,0,0.99)',
+    navigationPosition: 'right',
+    responsiveWidth: 900,
+    responsiveSlides: true,
+    menu: "#menu",
+    onLeave: function (section, origin, destination, direction) {
+        console.log(origin.index)
+    },
+});
+scrollbar.addListener((status) => {
+    window.pageYOffset = scrollbar.scrollTop
+    var fullScroll =$('.section2')[0].scrollTop
+    fullScroll = scrollbar.scrollTop
+    if(fullScroll===0){
+        $('#fullPage').fullpage.setAllowScrolling(true)
+    }else{
+        $('#fullPage').fullpage.setAllowScrolling(false,'up');
+        $('#fullPage').fullpage.setKeyboardScrolling(false, 'down, up');
+    }
+});
+
+// 停止滚动
+$.fn.fullpage.setAllowScrolling(false);
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <h5>效果展示</h5>
+        <div class="text">
+            <p>
+                <a class="active" target="_blank" href="https://yangtangjun.github.io/fullPage/">https://yangtangjun.github.io/fullPage/</a>
+            </p>
+        </div>
+    </section>
+    <section id="anchor3">
+        <div class="title">鼠标跟随1</div>
+        <pre class="code">
+<code class="hljs html">&lt;script src="cursor.js">&lt;/script&gt;
+</code></pre>
+        <div class="button">
+            <a target="_blank" href="static/other/cursor/cursor.js">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>查看js文件</p>
+            </a>
+        </div>
+        <h5>HTML 代码</h5>
+        <pre class="code">
+<code class="hljs html">&lt;div class="cursor"&gt;&lt;/div&gt;</code></pre>
+        <h5>CSS 代码</h5>
+        <pre class="code">
+<code class="hljs css">.cursor {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    transition: opacity .3s, color .4s;
+    background-color: black;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    backface-visibility: hidden;
+}
+body:hover .cursor{
+    opacity: 1;
+}
+</code></pre>
+        <h5>效果展示</h5>
+        <div class="mouse mouse_1">
+            <div class="cursor">
+                <div class="cursor_warp"></div>
+            </div>
+        </div>
+        <style>
+            .cursor {
+                position: fixed;
+                z-index: 9999;
+                top: 0;
+                left: 0;
+                transition: opacity .3s, color .4s;
+                opacity: 0;
+                pointer-events: none;
+                backface-visibility: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .cursor_warp{
+                transition: 0.5s;
+                width: 20px;
+                height: 20px;
+                background-color: #fff;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+    </section>
+    <section id="anchor4">
+        <div class="title">鼠标跟随2</div>
+        <pre class="code">
+<code class="hljs html">&lt;script src="cursor_2.js">&lt;/script&gt;
+</code></pre>
+        <div class="button">
+            <a target="_blank" href="static/other/cursor/cursor_2.js">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>查看js文件</p>
+            </a>
+        </div>
+        <h5>HTML 代码</h5>
+        <pre class="code">
+<code class="hljs html">&lt;div id="cursor"&gt;&lt;/div&gt;</code></pre>
+        <h5>CSS 代码</h5>
+        <pre class="code">
+<code class="hljs css">#cursor {
+    pointer-events: none;
+    position: fixed;
+    transform-origin: center center;
+    mix-blend-mode: difference;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    transition: 0.6s;
+}
+#cursor span {
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 20px;
+    background-color: #fff;
+    transform-origin: center center;
+    transform: translate(-50%, -50%)
+}
+body:hover #cursor{
+    opacity: 1;
+}
+</code></pre>
+        <h5>效果展示</h5>
+        <div class="mouse mouse_2">
+            <div id="cursor"></div>
+        </div>
+        <style>
+            #cursor {
+                pointer-events: none;
+                position: fixed;
+                transform-origin: center center;
+                /*mix-blend-mode: difference;*/
+                top: 0;
+                background-color: #fff;
+                left: 0;
+                z-index: 1000;
+                opacity: 0;
+                transition: 0.4s;
+            }
+            #cursor span {
+                position: absolute;
+                display: block;
+                width: 26px;
+                height: 26px;
+                border-radius: 20px;
+                background-color: #fff;
+                transform-origin: center center;
+                transform: translate(-50%, -50%)
+            }
+            .mouse_2:hover #cursor{
+                opacity: 1;
+            }
+        </style>
+    </section>
+    <section id="anchor5">
+        <div class="title">CountUp</div>
+        <pre class="code">
+<code class="hljs html">&lt;script src="count.js">&lt;/script&gt;
+</code></pre>
+        <div class="button">
+            <a target="_blank" href="static/other/count/count.js">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>查看js文件</p>
+            </a>
+        </div>
+        <h5>HTML 代码</h5>
+        <div class="text">
+            <p>data-to：结束值，data-separator：分隔符，data-speed：速度，data-fixed：识别小数点</p>
+        </div>
+        <pre class="code">
+<code class="hljs html">&lt;div class="count-item" data-to="5000" data-separator=""&gt;&lt;/div&gt;</code></pre>
+        <h5>JS 代码</h5>
+        <div class="exhibit">
+            <pre class="code js_2"><code class="hljs js">const countItems = document.querySelectorAll('.count-item');
+function onIntersection(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const e = entry.target;
+            animateCount(e);
+            // observer.unobserve(e);
+        }
+    });
+}
+const observer = new IntersectionObserver(onIntersection);
+countItems.forEach(item => observer.observe(item));
+function animateCount(e) {
+    var demo = { score: 0 },
+        scoreDisplay = e,
+        to = e.getAttribute('data-to'),
+        speed = e.getAttribute('data-speed') * 1,
+        separator = e.getAttribute('data-separator'),
+        to_fixed = e.getAttribute('data-fixed');
+
+    if (to !== null) {
+        if (to.indexOf('.') !== -1) {
+            var automatic = (to.length -1)-to.indexOf('.')
+        }
+    }
+    if (speed === 0) {
+        speed = 1;
+    }
+    TweenLite.to(demo, speed, {
+        score: to,
+        onUpdate: showScore
+    });
+    function showScore() {
+        if (separator !== null) {
+            scoreDisplay.innerHTML = formatNumberWithCommasAndDecimal(demo.score, to_fixed, separator);
+        }else if (to_fixed !== null) {
+            scoreDisplay.innerHTML = demo.score.toFixed(automatic);
+        }else {
+            scoreDisplay.innerHTML = demo.score.toFixed(0);
+        }
+    }
+}
+function formatNumberWithCommasAndDecimal(number, decimalPlaces,separator) {
+    var formattedNumber = number.toFixed(decimalPlaces);
+    formattedNumber = formattedNumber.replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+    return formattedNumber;
+}
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_2">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+    <section id="anchor6">
+        <div class="title">Video_Alert</div>
+        <h5>HTML 代码</h5>
+        <pre class="code">
+<code class="hljs html">&lt;h1 onclick="video_alert(this)"&gt;
+    &lt;video src="" autoplay loop controls&gt;&lt;/video&gt;
+&lt;/h1&gt;</code></pre>
+        <h5>CSS 代码</h5>
+        <div class="exhibit">
+            <pre class="code style_1"><code class="hljs css">*[onclick*='video_alert(this)'] video {
+    display: none;
+}
+.alert_video {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: 1s;
+}
+.video_active {
+    pointer-events: auto !important;
+    opacity: 1 !important;
+}
+.alert_video .joke {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    max-width: 90%;
+}
+.alert_video .joke .video {
+    width: 100%;
+    height: 576px;
+    display: block;
+}
+.alert_video .joke .video video {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.alert_video .joke .close {
+    margin: 0 0 0 25px;
+    cursor: pointer;
+    height: fit-content;
+    transition: 1s;
+}
+.alert_video .joke .close:hover{
+    transform: rotate(90deg);
+}
+.alert_video .joke .close svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+}
+.alert_video .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7);
+}
+.alert_video.all .joke {
+    width: 100%;
+    height: 100%;
+}
+.alert_video.all .joke .video {
+    height: 100%;
+    object-fit: cover;
+}
+.alert_video.all .close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+.alert_video.all .joke .video video {
+    object-fit: cover;
+}
+@media screen and (max-width: 1024px) {
+    .alert_video .joke {
+        width: 90%;
+    }
+    .alert_video .joke .close {
+        position: absolute;
+        right: 0;
+        top: -57px;
+    }
+    .alert_video .joke .video{
+        height: auto;
+    }
+}
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".style_1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <h5>JS 代码</h5>
+        <div class="exhibit">
+            <pre class="code js_3"><code class="hljs js">$('video:not(video[muted])').trigger('pause')
+
+function video_alert(e) {
+    var alert = $('.alert_video')
+    var video = $('.alert_video .joke .video video')
+    var controls = $(e).find('video').attr('controls')
+    var loop = $(e).find('video').attr('loop')
+    $(video).attr('controls',controls)
+    $(video).attr('loop',loop)
+    $(alert).addClass('video_active')
+    $(video).attr('src',$(e).find('video').attr('src'))
+    $(video).trigger('play');
+    if ($(e).is('.all')) {
+        $(alert).addClass('all')
+    }else {
+        $(alert).removeClass('all')
+    }
+}
+
+function video_close() {
+    $('.alert_video').removeClass('video_active')
+    $('.alert_video .joke .video video').trigger('pause');
+    $('.alert_video .joke .item').removeClass('item_active')
+}
+
+$(document).on('click','.alert_video .joke .close',function () {
+    video_close()
+})
+
+$(document).on('click','.alert_video .mask',function () {
+    video_close()
+})
+
+var video_html = '';
+video_html+= `&lt;div class="alert_video"&gt;
+    &lt;div class="joke"&gt;
+        &lt;div class="video"&gt;
+            &lt;video src=""&gt;&lt;/video&gt;
+        &lt;/div&gt;
+        &lt;div class="close"&gt;
+            &lt;svg t="1676432369827" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 p-id="2743" width="64" height="64">
+                &lt;path d="M548.992 503.744L885.44 167.328a31.968 31.968 0 1 0-45.248-45.248L503.744 458.496 167.328 122.08a31.968 31.968 0 1 0-45.248 45.248l336.416 336.416L122.08 840.16a31.968 31.968 0 1 0 45.248 45.248l336.416-336.416L840.16 885.44a31.968 31.968 0 1 0 45.248-45.248L548.992 503.744z"
+                      p-id="2744"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="mask">&lt;/div&gt;
+&lt;/div&gt;`
+
+if ($('*[onclick*="video_alert(this)"] video').length > 0) {
+    $('body').append(video_html)
+}
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_3">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+    <section id="anchor7">
+        <div class="title">Text_Alert</div>
+        <h5>HTML 代码</h5>
+        <div class="text">
+            <p>correct: 正确 error: 错误</p>
+        </div>
+        <div class="exhibit">
+                <pre class="code html_01">
+<code class="hljs html">&lt;div onclick="alert_text(this)"&gt;
+    &lt;div class="txt"&gt;这是一段文字&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".html_01">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p>或者</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js_01"><code class="hljs js">alert_text({
+    text:'这是一个提示',
+    class: 'error',
+    // background: '#ff0000',
+    // color: '#fff',
+})
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_01">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <h5>CSS 代码</h5>
+        <div class="exhibit">
+            <pre class="code style_01"><code class="hljs css">/*alert_text start*/
+*[onclick*='alert_text(this)'] .txt {
+    display: none;
+}
+
+.alert_text{
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    z-index: 999999999;
+    border: 1px solid #ebeef5;
+    background-color: #edf2fc;
+    width: 300px;
+    height: 48px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: top .4s;
+    border-radius: 7px;
+}
+.alert_text p{
+    font-size: 14px;
+    color: #909399;
+}
+.alert_text svg{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+.alert_text svg path{
+    fill: #c0c4cc;
+}
+.alert_text.error{
+    background-color: #fef0f0;
+    border-color: #fde2e2;
+}
+.alert_text.error p{
+    color: #f56c6c;
+}
+.alert_text.correct{
+    background-color: #f0f9eb;
+    border-color: #e1f3d8;
+}
+.alert_text.correct p{
+    color: #67c23a;
+}
+/*alert_text end*/
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".style_01">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <h5>JS 代码</h5>
+        <div class="exhibit">
+            <pre class="code js_04"><code class="hljs js">var public_text = '';
+public_text += `&lt;div class="alert_text animated fadeInUp_"&gt;
+                    &lt;p>&lt;/p&gt;
+                &lt;/div>`
+
+function alert_text(e) {
+    $('html').append(public_text)
+    if ($(e).is('.correct')) {
+        $('.alert_text').addClass('correct').removeClass('error')
+    }else if ($(e).is('.error')) {
+        $('.alert_text').addClass('error').removeClass('correct')
+    }
+    var obj = $(e).find('.txt').text()
+    var background = $(e).attr('data-background')
+    var color = $(e).attr('data-color')
+    if (obj !== '') {
+        $('.alert_text p').text(obj)
+    }else {
+        $('.alert_text p').text(e.text)
+        $('.alert_text').addClass(e.class)
+    }
+    $('.alert_text').each(function (index,ele) {
+        var top = index * 60 + 60
+
+        if (obj !== '') {
+            $(ele).css({
+                'top': top + 'px',
+                'background-color': background,
+            })
+            $(ele).find('p').css({
+                'color': color
+            })
+        }else {
+            $(ele).css({
+                'top': top + 'px',
+                'background-color': e.background,
+            })
+            $(ele).find('p').css({
+                'color': e.color
+            })
+        }
+
+        setTimeout(function () {
+            $(ele).removeClass('fadeInUp_').addClass('fadeOutDown_')
+            setTimeout(function () {
+                $(ele).remove()
+            },800)
+        },2000)
+    })
+    setInterval(function () {
+        $('.alert_text').each(function (index,ele) {
+            var top = index * 60 + 60
+            $(ele).css({
+                'top': top + 'px',
+            })
+        })
+    },2800)
+}
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_04">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+    <section id="anchor8">
+        <div class="title">Down_Pull</div>
+        <h5>HTML 代码</h5>
+        <div class="exhibit">
+                <pre class="code html_1">
+<code class="hljs html">&lt;div class="down_select" data-color="#3f51b5"&gt;
+    &lt;div class="txt"&gt;请选择&lt;/div&gt;
+    &lt;div class="pull"&gt;
+        &lt;div&gt;你的内容1&lt;/div&gt;
+        &lt;div&gt;你的内容2&lt;/div&gt;
+        &lt;div&gt;你的内容3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".html_1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <h5>CSS 代码</h5>
+        <div class="exhibit">
+            <pre class="code style_2"><code class="hljs css">.down_select{
+    position: relative;
+    cursor: pointer;
+}
+.down_select .pull{
+    position: absolute;
+    width: 101%;
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translate(-50%,10px);
+    color: #606266;
+    border: 1px solid #e4e7ed;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    background: #fff;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 259px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.down_select.on{
+    z-index: 9;
+}
+.down_select.on .pull{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,0);
+    transition: 0.4s;
+}
+.down_select.hide .pull{
+    opacity: 0!important;
+}
+.down_select .pull div:not(.scroll-content){
+    padding: 0 20px;
+    line-height: 37px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    z-index: 1;
+}
+.down_select .pull div:not(.scroll-content) span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.3s;
+}
+.down_select .pull div:not(.scroll-content):hover,.down_select .pull div:not(.scroll-content).on{
+    color: #fff;
+}
+.down_select .pull div:not(.scroll-content):hover span{
+    opacity: 1;
+}
+.down_select .pull div:not(.scroll-content).on span{
+    background: #f7f7f7  !important;
+    opacity: 1;
+}
+
+.down_select .pull div:not(.scroll-content).on {
+    color: #555;
+    pointer-events: none;
+}
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".style_2">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <h5>JS 代码</h5>
+        <div class="exhibit">
+            <pre class="code js_4"><code class="hljs js">$('.down_select').each(function(i,e) {
+    $(e).find('.pull div').append('<span></span>')
+    if ($(e).is('.active')) {
+        $(e).find('.pull').prepend('&lt;div class="on">请选择&lt;span&gt;&lt;/span&gt;&lt;/div&gt;')
+    }
+    $(e).click(function (e) {
+        $(this).toggleClass('on').siblings().removeClass('on')
+        e.stopPropagation()
+    })
+    $(e).find('.pull div').click(function (e) {
+        var text = $(this).text()
+        $(this).addClass('on').siblings().removeClass('on')
+        $(this).parents('.down_select').find('.txt').text(text)
+        $('.down_select').removeClass('on')
+        e.stopPropagation()
+    })
+    $(e).find('.pull div span').css('background-color',$(e).attr('data-color'))
+})
+
+$('body').click(function () {
+    $('.down_select').removeClass('on')
+})
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_4">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+    <section id="anchor9">
+        <div class="title">Scroll</div>
+        <div class="text">
+            <p>
+                可使用的参数：<br/>
+                <strong>dade-view</strong>：元素选择 , data-view="auto", 自动计算距离<br/>
+                <strong>data-distance</strong>：开始执行动画的距离<br/>
+                <strong>data-distance-end</strong>：动画结束的距离<br/>
+                <strong>data-animate</strong>：动画持续的距离<br/>
+                <strong>data-ease</strong>：动画执行从快到慢<br/>
+                <br/>
+                可使用的值：
+                <strong></strong><br/>
+                <strong>data-x</strong><br/>
+                <strong>data-y</strong><br/>
+                <strong>data-scale</strong><br/>
+                <strong>data-opacity</strong>
+            </p>
+        </div>
+        <h5>JS 代码</h5>
+        <div class="exhibit">
+            <pre class="code js_b"><code class="hljs js">scrollTop_start(document.documentElement.scrollTop)
+
+function scrollTop_start(e) {
+    var scrollTop = e;
+    $('[data-view]').each(function (index, ele) {
+        var overall_height =  document.documentElement.clientHeight;
+        var overall_width =  document.documentElement.clientWidth;
+        var start = $(ele).parents('section').position().top;
+        var distance = $(ele).attr('data-distance')
+        var ease = $(ele).attr('data-ease')
+        distance = distance === undefined ? 0 : distance
+        var unit = $(ele).attr('data-unit')
+        if (unit === 'vh') {
+            if (distance.includes('-')) {
+                distance = - overall_height / 10 * (distance*-1/10)
+            }
+        }
+
+        var start_distance = start + parseFloat(distance)
+        var animate_end = parseFloat($(ele).attr('data-animate'))
+        var end = $(ele).parents('section').next().position().top - overall_height
+        var end_value = $(ele).parents('section').height() - overall_height
+        var distance_end = $(ele).attr('data-distance-end')
+        if (distance_end) {
+            var vh = overall_height / 10 * (distance_end/10)
+            end = end + vh
+            end_value = end_value + vh
+        }
+
+        var scale = $(ele).attr('data-scale')
+        if (scale) {
+            var scale_and;
+            var scale_start = parseFloat(scale.split(',')[0])
+            var scale_end = parseFloat(scale.split(',')[1])
+            if (ease === '') {
+                scale_and = scale_start + easeOutQuad((scrollTop - start_distance) / animate_end) * ((scale_start - scale_end) * -1)
+            }else {
+                scale_and = scale_start + (scrollTop - start_distance) / animate_end * ((scale_start - scale_end) * -1)
+            }
+        }
+        scale_start = scale_start === undefined ? 1 : scale_start
+        scale_and = scale_and === undefined ?  1 :scale_and
+        scale_end = scale_end === undefined ?  1 :scale_end
+
+        var x = $(ele).attr('data-x')
+        x = x === undefined ? '0,0' : x
+        if (x) {
+            var x_and;
+            var x_start = parseFloat(x.split(',')[0])
+            var x_end = parseFloat(x.split(',')[1])
+            if (ease === '') {
+                x_and = x_start + easeOutQuad((scrollTop - start_distance) / animate_end) * (x_start * -1)
+            }else {
+                x_and = x_start + (scrollTop - start_distance) / animate_end * ((x_start - x_end) * -1)
+            }
+            x_and = x_and ? x_and : 0
+        }
+
+        var y = $(ele).attr('data-y')
+        y = y === undefined ? '0,0' : y
+        if (y) {
+            var y_and;
+            var y_start = parseFloat(y.split(',')[0])
+            var y_end = parseFloat(y.split(',')[1])
+            if (ease === '') {
+                y_and = y_start + easeOutQuad((scrollTop - start_distance) / animate_end) * (y_start*-1)
+            }else {
+                y_and = y_start + (scrollTop - start_distance) / animate_end * ((y_start - y_end) *-1)
+            }
+            y_and = y_and ? y_and : 0
+        }
+
+        var opacity = $(ele).attr('data-opacity')
+        if (opacity) {
+            var opacity_and;
+            var opacity_start = parseFloat(opacity.split(',')[0])
+            var opacity_end = parseFloat(opacity.split(',')[1])
+            if (ease === '') {
+                opacity_and = opacity_start + easeOutQuad((scrollTop - start_distance) / animate_end) * (opacity_start*-1)
+            }else {
+                opacity_and = opacity_start + (scrollTop - start_distance) / animate_end * ((opacity_start - opacity_end) *-1)
+            }
+            opacity_and = opacity_and ? opacity_and : 1
+        }
+
+        if (scrollTop >= start_distance && scrollTop < start_distance + animate_end) {
+            $(ele).css({
+                'transform': 'translate('+ x_and +'px,'+ y_and +'px) scale('+ scale_and +')',
+                'opacity': opacity_and
+            })
+        }else if (scrollTop < start_distance) {
+            $(ele).css({
+                'transform': 'translate('+ x_start +'px,'+ y_start +'px) scale('+ scale_start +')',
+                'opacity': opacity_start
+            })
+        }
+
+        if (scrollTop >= start_distance + animate_end) {
+            $(ele).css({
+                'transform': 'translate('+ x_end +'px,'+ y_end +'px) scale('+ scale_end +')',
+                'opacity': opacity_end
+            })
+        }
+
+        if ($(ele).attr('data-view') === 'auto') {
+            if (scrollTop >= start_distance && scrollTop < end) {
+                $(ele).css({
+                    'transform': 'translate(0px,' + (scrollTop - start_distance) + 'px)'
+                })
+            }else if (scrollTop < start_distance) {
+                $(ele).css({
+                    'transform': 'translate(0px,0px)'
+                })
+            }
+            if (scrollTop >= end) {
+                $(ele).css({
+                    'transform': 'translate(0px,'+ end_value +'px)'
+                })
+            }
+        }
+    })
+}
+
+function easeOutQuad(t) {
+    return t * (2 - t);
+}
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_b">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+<script src="static/js/main.js"></script>
+<script src="static/js/data.js"></script>
+<!---->
+<script src="static/other/highlight/highlight.js"></script>
+<script src="static/other/highlight/highlight.min.js"></script>
+<script src="static/other/copy/copy.js"></script>
+<script src="static/other/copy/particle.js"></script>
+<script src="static/other/cursor/cursor.js"></script>
+<script src="static/other/cursor/cursor_2.js"></script>
+<!---->
+<script src="static/js/function.js"></script>
+<script>
+    var id = 0;
+    $('body,html').mousemove(function (eve) {
+        clearInterval(id);
+        $('.cursor_warp').css('transform','scale(1.5)')
+        id = setInterval(function(){
+            $('.cursor_warp').css('transform','scale(1)')
+        }, 200);
+    })
+    $('.mouse_1').hover(function () {
+        $('.cursor').css('opacity','1');
+    },function () {
+        $('.cursor').css('opacity','0');
+    })
+</script>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="your keywords">
+    <meta name="description" content="your description">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/font/iconfont.css">
+
+    <!---->
+    <link rel="stylesheet" href="static/other/highlight/default.css">
+    <!---->
+</head>
+<body>
+<header id="0"></header>
+<div class="main">
+    <section class="section" id="anchor">
+        <div class="title">信息窗口</div>
+        <div class="text">
+            <p>电话弹窗</p>
+        </div>
+        <pre class="code">
+<code class="hljs html">&lt;a href=&quot;tel:11111111111&quot;&gt;&lt;/a&gt;
+</code></pre>
+        <div class="text">
+            <p>邮箱弹窗</p>
+        </div>
+        <pre class="code">
+<code class="hljs html">&lt;a href=&quot;mailto:2222222222qq.com&quot;&gt;&lt;/a&gt;
+</code></pre>
+        <div class="text">
+            <p>QQ弹窗</p>
+        </div>
+        <pre class="code">
+<code class="hljs html">&lt;a href=&quot;//wpa.qq.com/msgrd?v=3&uin=3424151174&site=qq&menu=yes&quot;&gt;&lt;/a&gt;
+</code></pre>
+        <p>&nbsp;</p>
+        <h5>效果展示:</h5>
+        <div class="button">
+            <a href="tel:11111111111">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>拨打电话</p>
+            </a>
+            <a href="mailto:2222222222qq.com">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>发送邮箱</p>
+            </a>
+            <a target="_blank" href="//wpa.qq.com/msgrd?v=3&amp;uin=3424151174&amp;site=qq&amp;menu=yes">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>发信息给QQ</p>
+            </a>
+        </div>
+    </section>
+    <section class="section2" id="anchor2">
+        <div class="title">隐藏</div>
+        <h5>CSS 代码:</h5>
+        <div class="text">
+            <p>单行隐藏</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code style_1">
+<code class="hljs css">width: 120px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".style_1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p>多行隐藏</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code style_2">
+<code class="hljs css">-webkit-line-clamp: 3;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+overflow: hidden;
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".style_2">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section3" id="anchor3">
+        <div class="title">字体</div>
+        <h5>CSS 代码:</h5>
+        <div class="exhibit">
+            <pre class="code">
+<code class="hljs css">font-style: oblique; /*字体倾斜字体倾斜*/
+text-transform: capitalize; /*首字母大写*/
+text-transform: uppercase; /*全大写*/
+text-transform: lowercase; /*全小写*/
+white-space: nowrap; /*强制不换行*/
+writing-mode: vertical-rl; /*垂直方向自右而左*/
+</code></pre>
+        </div>
+    </section>
+    <section class="section4" id="anchor4">
+        <div class="title">svg</div>
+
+        <div class="exhibit">
+            <pre class="code html_1">
+<code class="hljs css">&lt;svg viewBox="0 0 54 54"&gt;
+    &lt;path class="path-loop" d="M27,5 A22,22 0 1,1 5,27 A22,22 0 0,1 27,5" stroke-dasharray="157"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".html_1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <h5>CSS 代码:</h5>
+        <div class="exhibit">
+            <pre class="code style_3">
+<code class="hljs css">svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+}
+svg .path-loop {
+  stroke-dashoffset: 157px;
+  fill: none;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 1px;
+  transition: 0.4s;
+}
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".style_3">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+<script src="static/js/main.js"></script>
+<script src="static/js/data.js"></script>
+<!---->
+<script src="static/other/highlight/highlight.js"></script>
+<script src="static/other/highlight/highlight.min.js"></script>
+<script src="static/other/copy/copy.js"></script>
+<script src="static/other/copy/particle.js"></script>
+<!---->
+<script src="static/js/function.js"></script>
+</html>

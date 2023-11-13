@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="keywords" content="your keywords">
+    <meta name="description" content="your description">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/font/iconfont.css">
+
+    <!---->
+    <link rel="stylesheet" href="static/other/highlight/default.css">
+    <!---->
+</head>
+<body>
+<header id="3"></header>
+<div class="main">
+    <section class="section" id="anchor">
+        <div class="title">初始化</div>
+        <h5>HTML 代码:</h5>
+        <p>&nbsp;</p>
+        <pre class="code">
+<code class="hljs html">&lt;script src="smooth-scrollbar.js">&lt;/script&gt;
+</code></pre>
+        <div class="button">
+            <a target="_blank" href="static/other/scrollbar/smooth-scrollbar.js">
+                <div class="border_line"></div>
+                <div class="background"></div>
+                <p>查看js文件</p>
+            </a>
+        </div>
+        <h5>HTML 代码:</h5>
+        <pre class="code">
+<code class="hljs html">&lt;div id="my-scrollbar" data-scrollbar>&lt;/div&gt;
+</code></pre>
+        <h5>CSS 代码:</h5>
+        <div class="exhibit">
+            <pre class="code css_1"><code class="hljs css">#my-scrollbar {
+    height: 100vh;
+}
+.scroll-content {
+    overflow: hidden;
+}
+.scrollbar-thumb {
+    width: 5px !important;
+}
+@media screen and (max-width: 1024px) {
+    .scrollbar-thumb {
+        width: 0 !important;
+    }
+}
+.scrollbar-track-y {
+    z-index: 9999 !important;
+}
+.scrollbar-track {
+    background-color: transparent !important;
+    right: 0 !important;
+}
+.scrollbar-track:hover {
+    cursor: grab;
+}
+.scrollbar-thumb {
+    background: rgba(0, 0, 0, .5) !important;
+}
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".css_1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <h5>JS 代码:</h5>
+        <div class="text">
+            <p>初始化滚动条</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js_1"><code class="hljs js">var Scrollbar = window.Scrollbar;
+Scrollbar.initAll()
+var scrollbar = Scrollbar.get(document.querySelector('#my-scrollbar'))
+// 监听滚动条事件
+scrollbar.addListener((status) => {
+    window.pageYOffset = scrollbar.scrollTop;
+    let scroll = window.pageYOffset;
+    console.log(scroll)
+});
+
+// 图片视差
+function parallax() {
+    $('.parallax_img').each(function (i,e) {
+        var speed = $(e).data('speed');
+        var top = $(e).parent().position().top - document.body.clientHeight;
+        var value = -147.9*($(e).height()/1479) * speed
+        setInterval(function () {
+            if (window.pageYOffset > top){
+                var go = value + (window.pageYOffset - top) * (speed/10);
+                $(e).css({
+                    transform: 'translateY('+go+'px)'
+                })
+            }
+        },10)
+    })
+}
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_1">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p>水平滚动</p>
+        </div>
+        <h5>HTMl 代码</h5>
+        <pre class="code">
+<code class="hljs html">&lt;div id="my-scrollbar" data-scrollbar&gt;
+    &lt;div id="Horizontal"&gt;
+        &lt;div class="scrollX"&gt;
+            你的内容
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+        <h5>CSS 代码</h5>
+        <pre class="code css_1"><code class="hljs css">#Horizontal{
+    width: 100%;
+    overflow: hidden;
+}
+.scrollX{
+    width: fit-content;
+    height: 100vh;
+    display: flex;
+}
+</code></pre>
+        <h5>JS 代码</h5>
+        <div class="exhibit">
+                <pre class="code js_2"><code class="hljs js">// 初始化高度
+function Horizontal() {
+    if (document.querySelector('#Horizontal')) {
+        let scrollX = document.querySelector('.scrollX')
+        let Horizontal = document.querySelector('#Horizontal')
+
+        var scrollXHeight = (scrollX.clientWidth - document.documentElement.clientWidth) + document.documentElement.clientHeight
+        Horizontal.style.height = scrollXHeight + 'px'
+
+        // 当视口发生改变
+        window.addEventListener('resize', function () {
+            var scrollXHeight = (scrollX.clientWidth - document.documentElement.clientWidth) + document.documentElement.clientHeight
+            Horizontal.style.height = scrollXHeight + 'px'
+        });
+    }
+}
+
+Horizontal()
+
+// 水平滚动
+function HorizontalScroll() {
+    if (document.querySelector('#Horizontal')) {
+        if (window.pageYOffset > 0) {
+            $('.scrollX').css('transform', 'translate3d(-' + window.pageYOffset + 'px, ' + window.pageYOffset + 'px, 0px)')
+        } else {
+            $('.scrollX').css('transform', 'translate3d(0px, 0px, 0px)')
+        }
+    }
+}
+
+scrollbar.addListener((status) => {
+    window.pageYOffset = scrollbar.scrollTop;
+    let scroll = window.pageYOffset;
+    HorizontalScroll()
+});
+</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_2">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+
+        <div class="text">
+            <p>获取?</p>
+        </div>
+        <div class="exhibit">
+            <pre class="code js_3"><code class="hljs js">var anchor = location.hash // 获取锚点
+
+function GetRequest() {
+    var url = location.search; //获取url中"?"符后的字串
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("&");
+        for(var i = 0; i < strs.length; i ++) {
+            theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+        }
+    }
+    return theRequest;
+}
+
+function link_scroll() {
+    var anchor = GetRequest().scrollTo;
+    if(anchor!==''){
+        var ele = document.querySelector('#'+anchor);
+        if(ele){
+            var scroll = ele.offsetTop;
+            scrollbar.scrollTo(0, scroll, 1200);
+        }
+    }
+}
+
+link_scroll()
+
+$("a[href*='#']").click(function () {
+    link_scroll()
+})</code></pre>
+            <div class="copy" data-clipboard-action="copy" data-clipboard-target=".js_3">
+                <div class="iconfont icon-fuzhi"></div>
+                <div class="iconfont icon-duigou position"></div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+<script src="static/js/main.js"></script>
+<script src="static/js/data.js"></script>
+<!---->
+<script src="static/other/highlight/highlight.js"></script>
+<script src="static/other/highlight/highlight.min.js"></script>
+<script src="static/other/copy/copy.js"></script>
+<script src="static/other/copy/particle.js"></script>
+<!---->
+<script src="static/js/function.js"></script>
+</html>
