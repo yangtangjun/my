@@ -6,7 +6,7 @@ var data = [
 
 var link = document.createElement('link');
 link.rel = 'shortcut icon'
-link.href = '/favicon/favicon.ico'
+link.href = 'https://yangtangjun.github.io/my/favicon/favicon.ico'
 document.querySelector('head').appendChild(link)
 
 
